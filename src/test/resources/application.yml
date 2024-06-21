@@ -1,18 +1,14 @@
 spring:
-  thymeleaf:
-    prefix:
-      classpath:/templates/
-    suffix: .html
-
   datasource:
-    url: jdbc:h2:tcp://localhost/D:/inflearn/jpashop;
+    url: jdbc:h2:mem:test # 자바 메모리 모드, format_sql 까진 없어도 스프링 부트가 자동으로 메모리 모드로 지원해줌
+    # url: jdbc:h2:tcp://localhost/D:/inflearn/jpashop;
     username: sa
     password:
     driver-class-name: org.h2.Driver
 
   jpa:
     hibernate:
-      ddl-auto: create # <- ?????? ?? ??? ??? ?? ???? ??? ?? ??
+      ddl-auto: create
     properties:
       hibernate:
 #        show_sql: true <- System.out?? ??
@@ -22,4 +18,3 @@ logging:
   level:
     org.hibernate.SQL: debug # <- logger? ??? ??(??)
     org.hibernate.orm.jdbc.bind: trace
-
